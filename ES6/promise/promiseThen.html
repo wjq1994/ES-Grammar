@@ -1,0 +1,62 @@
+<!-- promise then -->
+<!-- 参考链接：http://es6.ruanyifeng.com/#docs/promise#Promise-prototype-then -->
+<!-- then方法返回的值是一个新的Promise实例（注意，不是原来那个Promise实例） -->
+<!-- Promise.prototype.catch方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const promise = new Promise(function(resolve, reject) {
+				// some code
+				setTimeout(() => {
+					var fingle = Math.random();
+					if (fingle < 0.5) {
+						resolve(fingle);
+						console.log("状态凝固之后是否还执行成功"); //会执行
+					} else {
+						reject(fingle);
+						console.log("状态凝固之后是否还执行失败"); //会执行
+					}
+
+				}, 1000);
+			});
+			//then方法返回的值是一个新的Promise实例
+			//如果返回普通表达式 会将普通表达式封装成一个新的Promise实例
+			const thenFuncSuccessPromiseResolve = (input) => {
+				console.log("看这里thenFuncSuccessPromiseResolve");
+				console.log(input);
+				// 等价于 return new Promise(resolve => resolve(input))
+				return input
+			};
+			const thenFuncSuccessPromiseReject = (input) => {
+				console.log("看这里thenFuncSuccessPromiseReject");
+				console.log(input);
+				return input;
+			};
+			const thenFuncSuccessPromiseResolve2 = (input) => {
+				console.log("看这里thenFuncSuccessPromiseResolve2");
+				console.log(input);
+				return new Promise(function(resolve, reject) {
+					// some code
+					setTimeout(() => {
+						var fingle = Math.random();
+						if (fingle < 0.5) {
+							resolve(fingle);
+							console.log("状态凝固之后是否还执行成功"); //会执行
+						} else {
+							reject(fingle);
+							console.log("状态凝固之后是否还执行失败"); //会执行
+						}
+				
+					}, 1000);
+				});
+			};
+			promise.then(thenFuncSuccessPromiseResolve).then(thenFuncSuccessPromiseResolve2).catch(thenFuncSuccessPromiseReject);
+		</script>
+	</body>
+</html>

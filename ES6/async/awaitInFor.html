@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/**
+			 * 传入参数 n，表示这个函数执行的时间（毫秒）
+			 * 执行的结果是 n + 200，这个值将用于下一步骤
+			 */
+			function takeLongTime(n) {
+				return new Promise(resolve => {
+					setTimeout(() => resolve(n + 200), n);
+				});
+			}
+
+			function step1(n) {
+				console.log(`step1 with ${n}`);
+				return takeLongTime(n);
+			}
+
+			function step2(m, n) {
+				console.log(`step2 with ${m} and ${n}`);
+				return takeLongTime(m + n);
+			}
+
+			function step3(k, m, n) {
+				console.log(`step3 with ${k}, ${m} and ${n}`);
+				return takeLongTime(k + m + n);
+			}
+
+			var processMinus = 0;
+			var frameId;
+			async function stop() {
+				return new Promise(resolve => {
+					frameId = setInterval(function() {
+						processMinus++;
+						console.log("时间间隔" + processMinus)
+						if (processMinus == 2) {
+							clearInterval(frameId);
+							processMinus = 0;
+							return resolve(1);
+						}
+					}, 300)
+				});
+			}
+
+			async function doIt(callback) {
+				console.time("doIt");
+				var cnt = 0;
+				for (var i = 0; i < 2; i++) {
+					var aa = await stop();
+					cnt += aa;
+				}
+				callback(cnt);
+
+				console.timeEnd("doIt");
+			}
+
+			doIt(function(cnt) {
+				console.log("是否执行" + cnt);
+			});
+		</script>
+	</body>
+</html>

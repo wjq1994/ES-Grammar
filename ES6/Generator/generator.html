@@ -1,0 +1,53 @@
+/
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function* outer() {
+				yield 'begin';
+				yield inner();
+				yield 'end';
+			}
+
+			function* inner() {
+				yield 'inner';
+			}
+
+			var it = outer(),
+				v;
+
+			v = it.next().value;
+			console.log(v); // -> 输出：begin
+
+			v = it.next().value;
+			console.log(v); // -> 输出：{}
+			console.log(v.toString()); // -> 输出：[object Generator]
+
+			v = it.next().value;
+			console.log(v); // -> 输出：end
+
+			v = it.next().value;
+			console.log(v); // -> 输出：undifined
+
+			let arr = [1, 2, 3, 4, 5, 6];
+//			let sum = add(...arr);
+			console.log(...arr); //21
+
+			var myIterable = {};
+			myIterable[Symbol.iterator] = function*() {
+				yield 1;
+				yield 2;
+				yield 3;
+			};
+
+			console.log("  " + (...myIterable)) // [1, 2, 3]
+		</script>
+	</body>
+
+</html>

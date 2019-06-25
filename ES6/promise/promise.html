@@ -1,0 +1,41 @@
+<!--http://es6.ruanyifeng.com/#docs/promise#Promise-%E7%9A%84%E5%90%AB%E4%B9%89-->
+<!--重要参数：Promise，resolve，reject-->
+<!--Promise 是一个容器，存放着一个异步执行的函数  有三个状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）-->
+<!--resolve（已成功）, reject（已失败） 两个参数 -->
+
+<!--一个异步操作的结果是返回一个普通函数-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			const promise = new Promise(function(resolve, reject) {
+				// some code
+				setTimeout(() => {
+					var fingle = Math.random();
+					if(fingle < 0.5) {
+						resolve("成功的结果：" + fingle);
+						console.log("状态凝固之后是否还执行成功"); //会执行
+					} else {
+						reject("失败的结果：" + fingle);
+						console.log("状态凝固之后是否还执行失败"); //会执行
+					}
+				}, 1000);
+			});
+			const thenFuncSuccess = (result) => {
+				console.log(result);
+			}
+			const thenFuncFail = (result) => {
+				console.log(result);
+			}
+			//promise.then(thenFuncSuccess,thenFuncFail); 差
+			//promise.then(thenFuncSuccess).catch(thenFuncFail); //好
+			var aaaa = promise.then(thenFuncSuccess).catch(thenFuncFail);
+		</script>
+	</body>
+
+</html>

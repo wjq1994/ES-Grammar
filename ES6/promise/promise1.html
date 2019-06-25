@@ -1,0 +1,38 @@
+<!--http://es6.ruanyifeng.com/#docs/promise#Promise-%E7%9A%84%E5%90%AB%E4%B9%89-->
+<!--重要参数：Promise，resolve，reject-->
+<!--Promise 是一个容器，存放着一个异步执行的函数  有三个状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）-->
+<!--resolve（已成功）, reject（已失败） 两个参数 -->
+
+<!--一个异步操作的结果是返回另一个异步操作-->
+<!--总结：Promise里的resolve或reject调用后，会执行then里的回调函数，没有调用resolve或reject，不会执行then -->
+<!--一般来说，调用resolve或reject以后，Promise 的使命就完成了，后继操作应该放到then方法里面，而不应该直接写在resolve或reject的后面。所以，最好在它们前面加上return语句，这样就不会有意外。-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			const thenFuncSuccessPromiseMul = (input) => {
+				return new Promise((resolve, reject) => {
+					// some code
+					setTimeout(resolve, 500, input*input); //相当于resolve（input*input），之后执行then
+				});
+			};
+			const thenFuncSuccessPromiseAdd = (input) => {
+				return new Promise((resolve, reject) => {
+					// some code
+					setTimeout(resolve, 500, input+input);
+				});
+			};
+			const showResult = (input) => {
+				console.log("计算结果："+input);
+			};
+			thenFuncSuccessPromiseMul(123).then(thenFuncSuccessPromiseAdd).then(showResult);
+		</script>
+	</body>
+
+</html>

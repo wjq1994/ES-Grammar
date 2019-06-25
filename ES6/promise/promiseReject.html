@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			const p = Promise.reject('出错了');
+			// 等同于
+			//const p = new Promise((resolve, reject) => reject('出错了'))
+
+			p.catch(function(s) {
+				console.log(s)
+			});
+			// 出错了
+			
+			const f = () => 666;
+			f();
+		</script>
+	</body>
+
+</html>
