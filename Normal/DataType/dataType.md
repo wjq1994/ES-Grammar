@@ -61,7 +61,7 @@ ToPrimitive将引用类型（object）转换为非对象类型，也就是原始
 ToPrimitive转成何种原始类型，取决于type，type参数可选，若指定，则按照指定类型转换，若不指定，默认根据实用情况分两种情况，Date为string，其余对象为number。那么什么时候会指定type类型呢，那就要看下面两种转换方式了。
 
 ##### toString
-
+每个对象都有一个toString()方法，当该对象被表示为一个文本值时，或者一个对象以预期的字符串方式引用时自动调用。默认情况下，toString()方法被每个Object对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"
 ##### valueOf
 Object.prototype.valueOf()方法返回指定对象的原始值。
 
