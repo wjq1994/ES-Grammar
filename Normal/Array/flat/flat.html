@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr1 = [1, 2, [3, 4]];
+			arr1.flat();
+			
+			// 反嵌套一层数组
+			arr1.reduce((acc, val) => acc.concat(val), []);// [1, 2, 3, 4]
+			
+			// 或使用 ...
+			const flatSingle = arr => [].concat(...arr);
+		</script>
+	</body>
+</html>
