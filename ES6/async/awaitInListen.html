@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#aaa {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				background-color: antiquewhite;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aaa">
+			
+		</div>
+		<script type="text/javascript">
+			async function test() {
+				try {
+					return await new Promise(function (resolve, reject) {
+						document.getElementById("aaa").addEventListener("click", () => {
+							console.log(1111)
+							resolve(111)
+						})
+						//throw new Error('出错了')
+					});
+				} catch(e) {
+					console.log(e)
+				}
+			}
+			async function run() {
+				await test().then((resolve) => {
+					console.log(resolve)
+				})
+				console.log(2222)
+			}
+			
+			run()
+		</script>
+	</body>
+</html>
