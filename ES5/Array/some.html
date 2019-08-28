@@ -1,0 +1,22 @@
+<!-- Array.prototype.some() -->
+<!-- 返回值：Boolean类型的值 -->
+<!-- 功能：some() 方法测试是否至少有一个元素可以通过被提供的函数方法 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 至少有一个元素可以通过被提供的函数方法
+			var array = [1, 2, 3, 4, 5];
+			var even = function(element) {
+				// checks whether an element is even
+				return element % 2 === 0;
+			};
+			console.log(array.some(even));
+			// expected output: true
+		</script>
+	</body>
+</html>

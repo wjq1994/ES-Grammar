@@ -1,0 +1,18 @@
+<!-- Array.prototype.filter() -->
+<!-- 返回值：创建一个新数组 -->
+<!-- 功能：其包含通过所提供函数实现的测试的所有元素 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var words = [{word: 'spray'},{word: 'limit'}, {word: 'elite'}, {word: 'exuberant'}, {word: 'destruction'}, {word: 'present'}];
+			const result = words.filter(value => value.word.length > 6);
+			console.log(result);
+			// expected output: Array [{word: "exuberant"}, {word: "destruction"}, {word: "present"}]
+		</script>
+	</body>
+</html>

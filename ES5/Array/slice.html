@@ -1,0 +1,24 @@
+<!-- Array.prototype.slice() -->
+<!-- 返回值：数组 -->
+<!-- 功能：这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+			
+			console.log(animals.slice(2));
+			// expected output: Array ["camel", "duck", "elephant"]
+
+			console.log(animals.slice(2, 4));
+			// expected output: Array ["camel", "duck"]
+
+			console.log(animals.slice(1, 5));
+			// expected output: Array ["bison", "camel", "duck", "elephant"]
+		</script>
+	</body>
+</html>
