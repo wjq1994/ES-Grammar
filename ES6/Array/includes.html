@@ -1,0 +1,31 @@
+<!-- Array.prototype.includes -->
+<!-- 返回值：布尔值 -->
+<!-- 功能：表示某个数组是否包含给定的值 -->
+<!-- 优点：对比indexOf，indexOf方法有两个缺点，
+		一是不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。
+		二是，它内部使用严格相等运算符（===）进行判断，这会导致对NaN的误判。 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//实例1
+			[1, 2, 3].includes(2)     // true
+			[1, 2, 3].includes(4)     // false
+			[1, 2, NaN].includes(NaN) // true
+			//实例2
+			//该方法的第二个参数表示搜索的起始位置，默认为0。如果第二个参数为负数，则表示倒数的位置，如果这时它大于数组长度（比如第二个参数为-4，但数组长度为3），则会重置为从0开始。
+			[1, 2, 3].includes(3, 3)  // false
+			[1, 2, 3].includes(3, -1) // true
+			[1, 2, 3].includes(3, -4) // true
+			//实例3 indexOf对NaN的误判
+			[NaN].indexOf(NaN)
+			// -1
+			[NaN].includes(NaN)
+			// true
+		</script>
+	</body>
+</html>
