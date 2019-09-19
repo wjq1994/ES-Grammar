@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function* demo() {
+			  console.log('Hello' + yield); // SyntaxError
+			  console.log('Hello' + yield 123); // SyntaxError
+
+			  console.log('Hello' + (yield)); // OK
+			  console.log('Hello' + (yield 123)); // OK
+			}
+			
+			for (let s of demo()) {
+				
+			}
+		</script>
+	</body>
+</html>

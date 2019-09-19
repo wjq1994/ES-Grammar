@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//thunkify 源码
+				
+			function fn(a, b, callback) {
+				let sum = a+b
+				callback(sum)
+				callback(sum)
+			}
+			
+			function thunkify(fn) {
+				return function() {
+					var args = [...arguments]
+					var ctx = this
+					return function(callBack) {
+						var called;
+						if (called) return;
+						called = true
+						args.push(function() {
+							callBack.apply(null, [...arguments])
+						})
+						try{
+							fn.call(ctx, ...args)
+						}catch(e){
+							//TODO handle the exception
+							callback(e)
+						}
+					}
+				}
+			}
+			
+			thunkify(fn)(1, 2)(console.log)
+		</script>
+	</body>
+
+</html>
