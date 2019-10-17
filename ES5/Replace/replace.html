@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var string = '%55656{324344}';
+			var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
+			var rtn = string.replace(RE_NARGS, (match, prefix, i, index) => {
+				let result;
+				console.log(match)
+				console.log(prefix)
+				console.log(i)
+				console.log(index)
+			});
+			console.log(rtn)
+		</script>
+	</body>
+</html>
