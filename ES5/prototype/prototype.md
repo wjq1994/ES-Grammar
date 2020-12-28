@@ -73,6 +73,10 @@ console.log( "theTree.constructor is " + theTree.constructor.name );
   (<a href='https://codepen.io/wjq1994'>@wjq1994</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<font size="3" color="red">This is some text!</font>
+<font size="2" color="blue">This is some text!</font>
+<font face="verdana" color="green"  size="3">This is some text!</font>
+
 ```javascript
 //构造函数
 function Tree(name) {
