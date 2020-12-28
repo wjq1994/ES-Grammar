@@ -67,6 +67,14 @@ console.log( "theTree.constructor is " + theTree.constructor.name );
 > theTree的原型对象为Tree.prototype，theTree可以通过 ```__proto__```来寻找不属于theTree的属性constructor
 > 
 > 任何对象都有 ```__proto__``` 属性，指向了创建该对象的构造函数的原型
+
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="wjq1994" data-slug-hash="OJRzyZO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="OJRzyZO">
+  <span>See the Pen <a href="https://codepen.io/wjq1994/pen/OJRzyZO">
+  OJRzyZO</a> by wangjianqing (<a href="https://codepen.io/wjq1994">@wjq1994</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 ```javascript
 //构造函数
 function Tree(name) {
