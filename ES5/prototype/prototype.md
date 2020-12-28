@@ -68,14 +68,10 @@ console.log( "theTree.constructor is " + theTree.constructor.name );
 > 
 > 任何对象都有 ```__proto__``` 属性，指向了创建该对象的构造函数的原型
 
-<iframe height="174" style="width: 100%;" scrolling="no" title="OJRzyZO" src="https://codepen.io/wjq1994/embed/OJRzyZO?height=174&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/wjq1994/pen/OJRzyZO'>OJRzyZO</a> by wangjianqing
-  (<a href='https://codepen.io/wjq1994'>@wjq1994</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-<font size="3" color="red">This is some text!</font>
-<font size="2" color="blue">This is some text!</font>
-<font face="verdana" color="green"  size="3">This is some text!</font>
+&lt;iframe height="174" style="width: 100%;" scrolling="no" title="OJRzyZO" src="https://codepen.io/wjq1994/embed/OJRzyZO?height=174&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"&gt;
+  See the Pen &lt;a href='https://codepen.io/wjq1994/pen/OJRzyZO'&gt;OJRzyZO&lt;/a&gt;by wangjianqing
+  (&lt;a href='https://codepen.io/wjq1994'&gt;@wjq1994&lt;/a&gt;) on &lt;a href='https://codepen.io'&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
 
 ```javascript
 //构造函数
