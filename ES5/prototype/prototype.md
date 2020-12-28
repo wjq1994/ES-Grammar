@@ -42,7 +42,7 @@ console.log( "theTree.constructor: " + theTree.constructor);
 console.log( "theTree._proto_: " + theTree._proto_);
 
 ```
-
+[在线预览](https://codepen.io/wjq1994/pen/OJRzyZO)
 
 > #### prototype
 > 每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。
@@ -67,8 +67,6 @@ console.log( "theTree.constructor is " + theTree.constructor.name );
 > theTree的原型对象为Tree.prototype，theTree可以通过 ```__proto__```来寻找不属于theTree的属性constructor
 > 
 > 任何对象都有 ```__proto__``` 属性，指向了创建该对象的构造函数的原型
-
-&lt;br/&gt;
 
 ```javascript
 //构造函数
