@@ -68,7 +68,7 @@ console.log( "theTree.constructor is " + theTree.constructor.name );
 > 
 > 任何对象都有 ```__proto__``` 属性，指向了创建该对象的构造函数的原型
 
-&lt;br&gt;
+&lt;br/&gt;
 
 ```javascript
 //构造函数
